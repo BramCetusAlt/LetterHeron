@@ -2,9 +2,50 @@ import java.util.Scanner;
 
 public class Caesar
 {
-	
-	public static String encrypt(String txt, int keyLength)
+	public void getInput(String text)
+	/* Gets the data required to process the text. That includes the key and wether the user
+	wants to encrypt or decrypt the text */	
 	{
+		Scanner scan = new Scanner(System.in);
+		int choice;
+		String finalText;
+		System.out.println("Enter the key \n");
+		int key = scan.nextInt();
+		System.out.println("[+] 1. Encrypt the text \n");
+		System.out.println("[+] 2. Decrypt the text \n");
+		choice = scan.nextInt();
+		
+		switch(choice)
+		{
+			case 1:
+			if(key <= 25 && key >=0)
+			{
+				finalText = encrypt(text, key);
+				System.out.println(finalText);
+			}
+            else
+			{
+				System.out.println("The key has to be a number from 0 to 25 \n");
+			}
+			break;
+
+			case 2:
+			if(key <= 25 && key >=0)
+			{
+				finalText = decrypt(text, key);
+				System.out.println(finalText);
+			}
+            else
+			{
+				System.out.println("The key has to be a number from 0 to 25 \n");
+			}
+			break;
+		}
+		
+	}
+	public String encrypt(String txt, int keyLength) 
+	{
+		//Encrypt the text and return the result.
 		String encrypted = "";
 		for(int i = 0; i < txt.length(); i++)
 		{
@@ -31,8 +72,9 @@ public class Caesar
 		}
 		return encrypted;
 	}
-	public static String decrypt(String txt, int keyLength)
+	public String decrypt(String txt, int keyLength)
 	{
+		//Decrypt the text and return the result.
 		String decrypted = "";
 		for(int i = 0; i < txt.length(); i++)
 		{
@@ -61,4 +103,3 @@ public class Caesar
 		return decrypted;
 	}
 }
-		
