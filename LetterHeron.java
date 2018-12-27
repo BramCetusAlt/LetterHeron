@@ -139,7 +139,7 @@ public class LetterHeron
 		//Shows the user how to use this app.
 		System.out.println("[+] This is a simple tool that can encrypt text using Caesar's cipher and Base64.");
 		System.out.println("How to use the Caesar's Cipher tool:\n");
-		System.out.println("Just enter the text you wish to encrypt or decrypt along with a number from 0 to 25.");
+		System.out.println("Just enter the text you wish to encrypt or decrypt along with a number from 1 to 25.");
 		System.out.println("That number is the key used to encrypt/decrypt the text.");
 		System.out.println("How to use the Base64 tool:\n");
 		System.out.println("Enter a text and choose whether you wish to encrypt or decrypt it.");
